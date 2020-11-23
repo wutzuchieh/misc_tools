@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 ## Borrows code from
 """Calculate and manipulate CRC32.
@@ -75,7 +75,7 @@ if __name__=='__main__':
     wanted_crc = 0x00000000
     count = 0
     while count < 512:
-        origname = os.urandom (15).encode ("hex").strip ("\x00")
+        origname = os.urandom (10).encode ("hex").strip ("\x00")
         forgename = crc.forge(wanted_crc, origname, 4)
         if ("/" not in forgename) and ("\x00" not in forgename):
             file (str(count), 'a').close()
